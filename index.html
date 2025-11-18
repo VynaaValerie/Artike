@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTech Info - Platform Informasi Teknologi Modern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <span>VTech Info</span>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#">Artikel</a></li>
+                        <li><a href="#">Tutorial</a></li>
+                        <li><a href="#">Kategori</a></li>
+                        <li><a href="#">Tentang</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Cari artikel...">
+                    </div>
+                    
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Artikel</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Kategori</a></li>
+            <li><a href="#">Tentang</a></li>
+        </ul>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>VTech Info</h1>
+            <p>Platform informasi teknologi terkini dengan artikel mendalam, tutorial, dan berita terbaru seputar perkembangan teknologi.</p>
+            <a href="#" class="cta-button">Jelajahi Artikel <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Article Content -->
+            <div class="article-content-main">
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="WhatsApp Bot Development" class="article-image">
+                    
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-tag">Bot Development</span>
+                            <span><i class="far fa-calendar"></i> 15 Juni 2023</span>
+                            <span><i class="far fa-user"></i> Admin</span>
+                        </div>
+                        
+                        <h1 class="article-title">Membuat Bot WhatsApp dengan Baileys: Panduan Lengkap</h1>
+                        
+                        <p class="article-excerpt">Baileys adalah library WhatsApp Web API yang powerful untuk Node.js. Dalam artikel ini, kita akan mempelajari cara membuat bot WhatsApp menggunakan Baileys dengan fitur-fitur canggih.</p>
+                        
+                        <div class="media-container">
+                            <audio controls class="audio-player">
+                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                                Browser Anda tidak mendukung elemen audio.
+                            </audio>
+                        </div>
+                        
+                        <h2>Apa itu Baileys?</h2>
+                        <p>Baileys adalah library WhatsApp Web API yang ditulis dalam TypeScript/JavaScript. Library ini memungkinkan developer untuk membuat bot WhatsApp dengan mudah dan efisien.</p>
+                        
+                        <h2>Instalasi dan Setup</h2>
+                        <p>Pertama, kita perlu menginstal Baileys menggunakan npm atau yarn:</p>
+                        
+                        <div class="code-block">
+                            <code>
+                                <span class="code-comment"># Menggunakan npm</span><br>
+                                npm install @whiskeysockets/baileys<br><br>
+                                
+                                <span class="code-comment"># Atau menggunakan yarn</span><br>
+                                yarn add @whiskeysockets/baileys
+                            </code>
+                        </div>
+                        
+                        <p>Untuk versi modifikasi yang disebutkan, Anda dapat menggunakan:</p>
+                        
+                        <div class="code-block">
+                            <code>
+                                npm i @adiwajshing/baileys@github:VynaaValerie/baileys-mods
+                            </code>
+                        </div>
+                        
+                        <h2>Kode Dasar Bot WhatsApp</h2>
+                        <p>Berikut adalah contoh kode dasar untuk membuat bot WhatsApp menggunakan Baileys:</p>
+                        
+                        <div class="code-block">
+                            <code>
+                                <span class="code-keyword">import</span> makeWASocket <span class="code-keyword">from</span> <span class="code-string">'@whiskeysockets/baileys'</span>;<br><br>
+                                
+                                <span class="code-comment">// Membuat koneksi socket</span><br>
+                                <span class="code-keyword">const</span> sock = makeWASocket({<br>
+                                &nbsp;&nbsp;printQRInTerminal: <span class="code-keyword">true</span><br>
+                                });<br><br>
+                                
+                                <span class="code-comment">// Menangani pesan yang masuk</span><br>
+                                sock.ev.on(<span class="code-string">'messages.upsert'</span>, <span class="code-keyword">async</span> m <span class="code-keyword">=></span> {<br>
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> message = m.messages[0];<br>
+                                &nbsp;&nbsp;<span class="code-keyword">if</span> (!message.key.fromMe <span class="code-operator">&&</span> m.type <span class="code-operator">===</span> <span class="code-string">'notify'</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">await</span> sock.sendMessage(message.key.remoteJid, { <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: <span class="code-string">'Halo! Saya adalah bot WhatsApp.'</span> <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                                &nbsp;&nbsp;}<br>
+                                });
+                            </code>
+                        </div>
+                        
+                        <h2>Fitur-fitur Lanjutan</h2>
+                        <p>Baileys mendukung berbagai fitur canggih seperti:</p>
+                        <ul>
+                            <li>Pengiriman pesan teks, gambar, video, dan dokumen</li>
+                            <li>Pengelolaan grup</li>
+                            <li>Status update</li>
+                            <li>Dan masih banyak lagi</li>
+                        </ul>
+                        
+                        <div class="file-download">
+                            <i class="fas fa-file-pdf file-icon"></i>
+                            <div>
+                                <div class="file-name">Panduan Lengkap Baileys.pdf</div>
+                                <div class="file-size">2.4 MB</div>
+                            </div>
+                            <i class="fas fa-download"></i>
+                        </div>
+                        
+                        <div class="article-actions">
+                            <a href="#" class="read-more">
+                                Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <div class="article-stats">
+                                <div class="article-stat">
+                                    <i class="far fa-eye"></i> 1.2K
+                                </div>
+                                <div class="article-stat">
+                                    <i class="far fa-comment"></i> 24
+                                </div>
+                                <div class="article-stat">
+                                    <i class="far fa-heart"></i> 86
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Kategori</h3>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="#" class="category-link">
+                                <span>Bot Development</span>
+                                <span class="category-count">12</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-link">
+                                <span>Web Development</span>
+                                <span class="category-count">24</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-link">
+                                <span>Mobile Apps</span>
+                                <span class="category-count">18</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-link">
+                                <span>Artificial Intelligence</span>
+                                <span class="category-count">9</span>
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-link">
+                                <span>Cyber Security</span>
+                                <span class="category-count">15</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Tags Populer</h3>
+                    <div class="tags-container">
+                        <a href="#" class="tag">JavaScript</a>
+                        <a href="#" class="tag">Node.js</a>
+                        <a href="#" class="tag">Baileys</a>
+                        <a href="#" class="tag">WhatsApp Bot</a>
+                        <a href="#" class="tag">API</a>
+                        <a href="#" class="tag">TypeScript</a>
+                        <a href="#" class="tag">Automation</a>
+                        <a href="#" class="tag">WebSocket</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p>Dapatkan update artikel terbaru langsung ke email Anda.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="text" class="newsletter-input" id="subscriberName" placeholder="Nama Anda" required>
+                        <input type="email" class="newsletter-input" id="subscriberEmail" placeholder="Alamat email Anda" required>
+                        <button type="submit" class="newsletter-button">Berlangganan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>VTech Info</h3>
+                    <p>Platform informasi teknologi terkini dengan artikel mendalam, tutorial, dan berita terbaru seputar perkembangan teknologi.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kategori</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Bot Development</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Artificial Intelligence</a></li>
+                        <li><a href="#">Cyber Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#">Artikel</a></li>
+                        <li><a href="#">Tutorial</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@vtechinfo.com</li>
+                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 VTech Info. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
